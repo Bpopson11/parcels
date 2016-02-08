@@ -40,7 +40,7 @@ class Parcel
 
     function getWeight()
     {
-      return $this->weight;
+      return $this->wyeight;
     }
 
 }
