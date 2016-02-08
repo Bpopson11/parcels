@@ -4,12 +4,14 @@ class Parcel
 {
     private $height;
     private $width;
+    private $length;
     private $weight;
 
-    function __construct($height, $width, $weight)
+    function __construct($height, $length, $width, $weight)
     {
         $this->height = $height;
         $this->width = $width;
+        $this->length = $length;
         $this->weight = $weight;
     }
 
@@ -31,6 +33,16 @@ class Parcel
     function getWidth()
     {
       return $this->width;
+    }
+
+    function setLength($new_length)
+    {
+      $this->length = $new_length;
+    }
+
+    function getLength()
+    {
+      return $this->length;
     }
 
     function setWeight($new_weight)
