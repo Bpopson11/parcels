@@ -10,7 +10,7 @@ class Parcel
 
 
 
-    function __construct($height, $length, $width, $weight)
+    function __construct($height, $width, $length, $weight)
     {
         $this->height = $height;
         $this->width = $width;
@@ -58,30 +58,25 @@ class Parcel
       return $this->weight;
     }
 
-    function volume($height, $width, $length)
+    function volume()
     {
         return $this->height * $this->width * $this->length;
     }
 
-    function totalPrice($volume, $weight)
+    function totalPrice()
     {
-        return ($this->volume * 0.13) + ($this->weight * .25);
+        return ($this->volume() * 0.13) + ($this->weight * .25);
     }
 }
 
-
-
-// $parcels_total = array();
-// foreach ($parcels as $parcel) {
-//     $parcel_height = $parcel->getHeight();
-//     $parcel_width = $parcel->getWidth();
-//     $parcel_length = $parcel->getLength();
-//       if ($car_price < $_GET["price"] && $car_mileage < $_GET["miles"]) {
-//           array_push($cars_matching_search, $car);
-//       }
-//   }
-
-
+// function volume($object)
+// { THIS IS ALSO AN OPTION IF YOU WANT TO APPLY THE VOLUME FUNCTION TO MORE THAN ONE CLASS
+//   $h = $object->getHeight();
+//   $w = $object->getWidth();
+//   $l = $object->getLength();
+//   $v = $h * $w * $l;
+//   return $v;
+// }
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +94,6 @@ class Parcel
     ?>
     <p>Volume of package: <?php echo $object_volume; ?></p>
     <p>Weight: <?php echo $object_weight; ?></p>
-    <p>Total: <?php echo $finalPrice; ?></p>
+    <p>Total: <?php echo '$'. $finalPrice; ?></p>
 </body>
 </html>
